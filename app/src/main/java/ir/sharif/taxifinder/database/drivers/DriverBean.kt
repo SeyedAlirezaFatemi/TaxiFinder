@@ -9,6 +9,10 @@ class DriverBean(
     var driverId: Int,
     @ColumnInfo(name = "msisdn")
     var msisdn: String? = null,
+    @ColumnInfo(name = "plate")
+    var plate: String? = null,
+    @ColumnInfo(name = "carBrand")
+    var carBrand: String? = null,
     @ColumnInfo(name = "firstName")
     var firstName: String? = null,
     @ColumnInfo(name = "lastName")

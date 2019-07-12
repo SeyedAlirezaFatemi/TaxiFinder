@@ -10,7 +10,7 @@ object Advertiser {
     }
 
     private val subscribers =
-        AdvertisementType.values().map { mutableListOf<AdvertiseListener<Any>>() }
+        AdvertisementType.values().map { mutableSetOf<AdvertiseListener<Any>>() }
 
     fun <T> subscribe(subscriber: AdvertiseListener<T>, advertisementType: AdvertisementType) =
         selectSubscribers<T>(advertisementType).add(subscriber)
@@ -22,5 +22,5 @@ object Advertiser {
         selectSubscribers<T>(advertisement.type).forEach { it.receiveData(advertisement) }
 
     private fun <T> selectSubscribers(advertisementType: AdvertisementType) =
-        (subscribers[advertisementType.ordinal] as MutableList<AdvertiseListener<T>>)
+        (subscribers[advertisementType.ordinal] as MutableSet<AdvertiseListener<T>>)
 }

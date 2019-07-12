@@ -11,6 +11,8 @@ androidExtensions {
 }
 
 def room_version = "2.2.0-alpha01"
+def klockVersion = "1.4.0"
+
 
 repositories {
     google()
@@ -48,6 +50,8 @@ dependencies {
     testImplementation "androidx.room:room-testing:$room_version"
     implementation 'androidx.core:core-ktx:1.0.2'
 
+    implementation 'com.orhanobut:logger:2.2.0'
+    implementation "com.soywiz.korlibs.klock:klock-jvm:$klockVersion"
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0-rc01'

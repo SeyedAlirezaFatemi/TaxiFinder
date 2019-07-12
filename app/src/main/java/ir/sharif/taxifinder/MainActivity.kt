@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Exception
 import kotlin.concurrent.thread
 
-class MainActivity : BaseActivity(), Advertiser.AdvertiseListener<List<Driver>> {
+class MainActivity : BaseActivity(), Advertiser.AdvertiseListener<Any> {
     var drivers: List<Driver> = arrayListOf()
 
     lateinit var adapter: DriverAdapter
@@ -26,6 +26,10 @@ class MainActivity : BaseActivity(), Advertiser.AdvertiseListener<List<Driver>> 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        Advertiser.subscribe(this, AdvertisementType.FETCH_DRIVERS_SUCCESS)
+        Advertiser.subscribe(this, AdvertisementType.FETCH_DRIVERS_ERROR)
+        Advertiser.subscribe(this, AdvertisementType.NO_INTERNET)
 
         val displayMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(displayMetrics)
@@ -63,35 +67,30 @@ class MainActivity : BaseActivity(), Advertiser.AdvertiseListener<List<Driver>> 
         }
 
         initList()
-        callWebservice()
-    }
-
-    override fun receiveData(advertisement: Advertisement<List<Driver>>) {
-
+        MessageController.fetchDrivers()
     }
 
     override fun onResume() {
         super.onResume()
-        Advertiser.subscribe(this, AdvertisementType.DRIVERS_LOADED)
+        Advertiser.subscribe(this, AdvertisementType.FETCH_DRIVERS_SUCCESS)
+        Advertiser.subscribe(this, AdvertisementType.FETCH_DRIVERS_ERROR)
+        Advertiser.subscribe(this, AdvertisementType.NO_INTERNET)
     }
 
     override fun onPause() {
         super.onPause()
-        Advertiser.unSubscribe(this, AdvertisementType.DRIVERS_LOADED)
+        Advertiser.unSubscribe(this, AdvertisementType.FETCH_DRIVERS_SUCCESS)
+        Advertiser.unSubscribe(this, AdvertisementType.FETCH_DRIVERS_ERROR)
+        Advertiser.unSubscribe(this, AdvertisementType.NO_INTERNET)
     }
 
-    private fun callWebservice() {
-        thread(true) {
-            try {
-                val response = WebserviceHelper.getDrivers()
-                if (response.code == 200) {
-                    drivers = response.driver
-                    updateList()
-                } else {
-                    toast(response.message)
-                }
-            } catch (e: Exception) {
-                toastNoNetwork()
+    override fun receiveData(advertisement: Advertisement<Any>) {
+        when {
+            advertisement.type == AdvertisementType.NO_INTERNET -> toastNoNetwork()
+            advertisement.type == AdvertisementType.FETCH_DRIVERS_ERROR -> toast(advertisement.data as String)
+            advertisement.type == AdvertisementType.FETCH_DRIVERS_SUCCESS -> {
+                drivers = advertisement.data as List<Driver>
+                updateList()
             }
         }
     }

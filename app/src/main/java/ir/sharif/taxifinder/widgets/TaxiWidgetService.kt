@@ -25,7 +25,6 @@ class TaxiRemoteViewsFactory(
 
     private lateinit var widgetItems: List<Driver>
 
-
     override fun onCreate() {
         thread(true) {
             try {
