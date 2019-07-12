@@ -43,7 +43,6 @@ class DriverViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
                 false
             }
         }
-
     }
 
     private fun collapseView() {

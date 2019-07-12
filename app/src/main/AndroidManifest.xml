@@ -14,7 +14,7 @@
             android:supportsRtl="false"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <receiver android:name="ir.TaxiAppWidget">
+        <receiver android:name=".widgets.TaxiAppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
@@ -23,6 +23,9 @@
                     android:name="android.appwidget.provider"
                     android:resource="@xml/taxi_app_widget_info"/>
         </receiver>
+
+        <service android:name=".widgets.TaxiWidgetService"
+                 android:permission="android.permission.BIND_REMOTEVIEWS"/>
 
         <activity
                 android:name=".LoginActivity"

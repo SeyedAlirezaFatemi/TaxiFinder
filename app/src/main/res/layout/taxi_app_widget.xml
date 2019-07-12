@@ -4,11 +4,22 @@
                 android:padding="@dimen/widget_margin"
                 android:background="#09C">
 
-    <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="40sp"
-            android:text="Nil"/>
+    <ListView android:layout_width="match_parent" android:layout_height="match_parent"
+              android:id="@+id/taxi_widget_list_view"/>
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/empty_view"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:textColor="#ffffff"
+              android:textStyle="bold"
+              android:text="Check"
+              android:textSize="20sp"/>
+    <!--<TextView-->
+    <!--android:id="@+id/textView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:textSize="40sp"-->
+    <!--android:text="Nil"/>-->
 
 </RelativeLayout>
