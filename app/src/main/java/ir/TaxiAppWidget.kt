@@ -1,9 +1,12 @@
 package ir
 
+import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
+import android.content.Intent
 import android.widget.RemoteViews
+import ir.sharif.taxifinder.MainActivity
 import ir.sharif.taxifinder.R
 
 /**
@@ -32,6 +35,16 @@ class TaxiAppWidget : AppWidgetProvider() {
             context: Context, appWidgetManager: AppWidgetManager,
             appWidgetId: Int
         ) {
+
+            val intent = Intent(context, MainActivity::class.java)
+            val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
+
+            val remoteViews = RemoteViews(context.packageName, R.layout.taxi_app_widget)
+
+            remoteViews.setOnClickPendingIntent(R.id.textView, pendingIntent)
+
+            appWidgetManager.updateAppWidget(appWidgetId, remoteViews)
+
 
 //            val widgetText = context.getString(R.string.appwidget_text)
 //            // Construct the RemoteViews object
