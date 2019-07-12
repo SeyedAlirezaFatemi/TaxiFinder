@@ -10,14 +10,15 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem
 import com.google.android.gms.vision.barcode.Barcode
 import com.notbytes.barcode_reader.BarcodeReaderActivity
+import ir.sharif.taxifinder.models.Advertisement
+import ir.sharif.taxifinder.models.AdvertisementType
 import ir.sharif.taxifinder.webservice.WebserviceHelper
 import ir.sharif.taxifinder.webservice.webservices.drivers.Driver
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Exception
 import kotlin.concurrent.thread
 
-class MainActivity : BaseActivity() {
-
+class MainActivity : BaseActivity(), Advertiser.AdvertiseListener<List<Driver>> {
     var drivers: List<Driver> = arrayListOf()
 
     lateinit var adapter: DriverAdapter
@@ -63,7 +64,20 @@ class MainActivity : BaseActivity() {
 
         initList()
         callWebservice()
+    }
 
+    override fun receiveData(advertisement: Advertisement<List<Driver>>) {
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Advertiser.subscribe(this, AdvertisementType.DRIVERS_LOADED)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Advertiser.unSubscribe(this, AdvertisementType.DRIVERS_LOADED)
     }
 
     private fun callWebservice() {
@@ -76,7 +90,7 @@ class MainActivity : BaseActivity() {
                 } else {
                     toast(response.message)
                 }
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 toastNoNetwork()
             }
         }
@@ -123,7 +137,7 @@ class MainActivity : BaseActivity() {
                 } else {
                     toast(response.message)
                 }
-            }catch (e:Exception){
+            } catch (e: Exception) {
                 toastNoNetwork()
             }
         }
