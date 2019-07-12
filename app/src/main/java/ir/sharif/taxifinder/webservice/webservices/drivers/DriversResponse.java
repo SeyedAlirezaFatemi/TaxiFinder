@@ -17,6 +17,12 @@ public class DriversResponse {
     @Expose
     private List<Driver> driver = null;
 
+    public DriversResponse(Integer code, String message, List<Driver> driver) {
+        this.code = code;
+        this.message = message;
+        this.driver = driver;
+    }
+
     public Integer getCode() {
         return code;
     }
