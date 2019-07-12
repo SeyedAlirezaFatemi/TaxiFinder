@@ -40,5 +40,4 @@ public class DriversResponse {
     public void setDriver(List<Driver> driver) {
         this.driver = driver;
     }
-
 }

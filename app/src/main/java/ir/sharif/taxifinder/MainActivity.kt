@@ -4,9 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.os.Handler
 import android.util.DisplayMetrics
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem
@@ -81,8 +79,6 @@ class MainActivity : BaseActivity() {
             } catch (e: Exception){
                 toastNoNetwork()
             }
-
-
         }
     }
 
@@ -91,7 +87,6 @@ class MainActivity : BaseActivity() {
             adapter.setDrivers(drivers)
             adapter.notifyDataSetChanged()
         }
-
     }
 
     private fun initList() {
@@ -114,7 +109,6 @@ class MainActivity : BaseActivity() {
             val barcode = data.getParcelableExtra(BarcodeReaderActivity.KEY_CAPTURED_BARCODE) as Barcode
             callInquiryWebservice(barcode.rawValue)
         }
-
     }
 
     private fun callInquiryWebservice(uuid: String) {

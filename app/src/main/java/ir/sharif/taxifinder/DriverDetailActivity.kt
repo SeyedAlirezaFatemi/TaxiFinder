@@ -3,16 +3,11 @@ package ir.sharif.taxifinder
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.view.ViewTreeObserver
-import android.widget.ImageView
-import android.widget.RelativeLayout
 import com.bumptech.glide.Glide
-import ir.sharif.taxifinder.webservice.webservices.driverDetail.Car
 import ir.sharif.taxifinder.webservice.webservices.driverDetail.DriverDetail
 import kotlinx.android.synthetic.main.activity_driver_detail.*
 
 class DriverDetailActivity : BaseActivity() {
-
 
     lateinit var driverDetail: DriverDetail
 
