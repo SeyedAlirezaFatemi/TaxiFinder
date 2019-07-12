@@ -19,4 +19,6 @@
     <string name="clear_form">خالی کردن فرم</string>
     <string name="mobile_alert">شماره موبایل را وارد کنید</string>
     <string name="enter">ورود</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 </resources>
