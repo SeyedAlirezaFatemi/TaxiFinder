@@ -18,9 +18,11 @@ class LoginActivity : BaseActivity() {
         phoneNumberLabel.bold()
 
         submitButton.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
             val phone = phoneEditText.text
             if (phone.startsWith("9") || phone.startsWith("09")) {
-                callLoginWebservice(phone.toString())
+//                callLoginWebservice(phone.toString())
             } else {
                 Toast.makeText(this, "شماره موبایل اشتباه است", Toast.LENGTH_LONG).show()
             }
