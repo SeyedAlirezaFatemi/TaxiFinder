@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.util.DisplayMetrics
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem
 import com.google.android.gms.vision.barcode.Barcode
@@ -18,7 +19,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Exception
 import kotlin.concurrent.thread
 
-class MainActivity : BaseActivity(), Advertiser.AdvertiseListener<Any> {
+class MainActivity : BaseActivity(), Advertiser.AdvertiseListener<Any>, SwipeRefreshLayout.OnRefreshListener {
+
     var drivers: List<Driver> = arrayListOf()
 
     lateinit var adapter: DriverAdapter
@@ -66,7 +68,12 @@ class MainActivity : BaseActivity(), Advertiser.AdvertiseListener<Any> {
             true
         }
 
+        pullToRefresh.setOnRefreshListener(this)
         initList()
+        MessageController.fetchDrivers()
+    }
+
+    override fun onRefresh() {
         MessageController.fetchDrivers()
     }
 
@@ -85,6 +92,7 @@ class MainActivity : BaseActivity(), Advertiser.AdvertiseListener<Any> {
     }
 
     override fun receiveData(advertisement: Advertisement<Any>) {
+        pullToRefresh.isRefreshing = false
         when {
             advertisement.type == AdvertisementType.NO_INTERNET -> toastNoNetwork()
             advertisement.type == AdvertisementType.FETCH_DRIVERS_ERROR -> toast(advertisement.data as String)
