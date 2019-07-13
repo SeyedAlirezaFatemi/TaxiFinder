@@ -4,6 +4,7 @@ import com.orhanobut.logger.Logger
 import com.soywiz.klock.DateTime
 import com.soywiz.klock.minutes
 import ir.sharif.taxifinder.managers.ConnectionManager
+import ir.sharif.taxifinder.managers.StorageManager
 
 object MessageController {
     private var last = 0
@@ -16,7 +17,7 @@ object MessageController {
             lastDriversFetchTime = DateTime.now()
         } else {
             Logger.i("Loading posts from storage.")
-//            StorageManager.fetchDrivers()
+            StorageManager.fetchDrivers()
         }
     }
 }
