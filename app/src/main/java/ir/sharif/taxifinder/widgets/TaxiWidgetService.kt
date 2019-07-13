@@ -23,7 +23,7 @@ class TaxiRemoteViewsFactory(
     intent: Intent
 ) : RemoteViewsService.RemoteViewsFactory {
 
-    private lateinit var widgetItems: List<Driver>
+    private var widgetItems: List<Driver> = WebserviceHelper.getDrivers().driver
 
     override fun onCreate() {
         thread(true) {

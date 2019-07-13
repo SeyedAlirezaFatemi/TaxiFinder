@@ -1,0 +1,13 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+            android:shortcutId="scan"
+            android:enabled="true"
+            android:shortcutShortLabel="@string/scan_barcode"
+            android:shortcutLongLabel="@string/scan_barcode">
+        <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="ir.sharif.taxifinder"
+                android:targetClass="com.notbytes.barcode_reader.BarcodeReaderActivity"/>
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+</shortcuts>
