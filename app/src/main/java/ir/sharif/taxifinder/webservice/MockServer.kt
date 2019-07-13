@@ -8,5 +8,9 @@ import ir.sharif.taxifinder.webservice.webservices.login.LoginResponse
 object MockServer {
     fun login(phone: String) = if (phone == "09150773830") LoginResponse(200, "login successful") else throw WebserviceException(400, "error")
 
-    fun getDriver() = DriversResponse(200, "successful", arrayListOf(Driver("https://avatars2.githubusercontent.com/u/24273605?s=460&v=4", "مهدی", "حسن زاده", "09150773830", "206", "123456789")))
+    fun getDriver() = DriversResponse(200, "successful",
+        arrayListOf(
+            Driver("https://avatars2.githubusercontent.com/u/24273605?s=460&v=4", "مهدی", "حسن زاده", "09150773830", "206", "123456789"),
+            Driver("https://avatars1.githubusercontent.com/u/39184114?s=460&v=4","علیرضا","فاطمی","09171021072","000","123456788")
+        ))
 }
