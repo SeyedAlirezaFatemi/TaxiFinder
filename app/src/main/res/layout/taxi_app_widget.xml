@@ -2,7 +2,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="@dimen/widget_margin"
-                android:background="#09C">
+                android:background="@drawable/blureffect">
 
     <ListView android:layout_width="match_parent" android:layout_height="match_parent"
               android:id="@+id/taxi_widget_list_view"/>

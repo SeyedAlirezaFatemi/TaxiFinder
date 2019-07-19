@@ -33,6 +33,20 @@ object MockServer {
         drivers.add(driver)
     }
 
+    fun deleteDriver(msisdn : String){
+        var index = -1;
+        for (driver in drivers) {
+            if (driver.msisdn == msisdn){
+                index = drivers.indexOf(driver)
+                break
+            }
+        }
+        if (index != -1){
+            drivers.removeAt(index)
+        }
+        println("deleteeddddddddddddddddddddddddddd")
+    }
+
     fun getDriver() = DriversResponse(
         200, "successful",
         drivers

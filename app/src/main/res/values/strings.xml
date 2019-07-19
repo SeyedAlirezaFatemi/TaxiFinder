@@ -30,4 +30,8 @@
     <string name="avatar">آدرس آواتار (اختیاری)</string>
     <string name="first_name">نام</string>
     <string name="necessary_field">پر کردن این فیلد ضروری است!</string>
+    <string name="sure_delete">آیا از حذف مطمئنید؟</string>
+    <string name="delete_driver">حذف راننده</string>
+    <string name="yes">بله</string>
+    <string name="no">خیر</string>
 </resources>

@@ -31,14 +31,14 @@
                 android:background="@color/gray"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:paddingTop="18dp"
+                android:paddingTop="15dp"
                 android:layout_weight="8">
 
 
             <EditText
                     android:id="@+id/firstNameEditText"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="9dp"
+                    android:layout_marginTop="6dp"
                     android:background="@drawable/phone_edit_bg"
                     android:elevation="8dp"
                     android:layout_marginLeft="36dp"
@@ -53,7 +53,7 @@
             <EditText
                     android:id="@+id/lastNameEditText"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="9dp"
+                    android:layout_marginTop="6dp"
                     android:layout_below="@id/firstNameEditText"
                     android:background="@drawable/phone_edit_bg"
                     android:elevation="8dp"
@@ -69,7 +69,7 @@
             <EditText
                     android:id="@+id/phoneNumberEditText"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="9dp"
+                    android:layout_marginTop="6dp"
                     android:layout_below="@id/lastNameEditText"
                     android:background="@drawable/phone_edit_bg"
                     android:elevation="8dp"
@@ -85,7 +85,7 @@
             <EditText
                     android:id="@+id/carBrandEditText"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="9dp"
+                    android:layout_marginTop="6dp"
                     android:layout_below="@id/phoneNumberEditText"
                     android:background="@drawable/phone_edit_bg"
                     android:elevation="8dp"
@@ -101,7 +101,7 @@
             <EditText
                     android:id="@+id/plateEditText"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="9dp"
+                    android:layout_marginTop="6dp"
                     android:layout_below="@id/carBrandEditText"
                     android:background="@drawable/phone_edit_bg"
                     android:elevation="8dp"
@@ -117,7 +117,7 @@
             <EditText
                     android:id="@+id/avatarEditText"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="9dp"
+                    android:layout_marginTop="6dp"
                     android:layout_below="@id/plateEditText"
                     android:background="@drawable/phone_edit_bg"
                     android:elevation="8dp"
