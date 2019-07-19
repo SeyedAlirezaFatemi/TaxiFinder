@@ -1,13 +1,16 @@
 package ir.sharif.taxifinder.webservice.base
 
 import ir.sharif.taxifinder.webservice.webservices.driverCode.DriverCodeResponse
-import ir.sharif.taxifinder.webservice.webservices.login.LoginResponse
 import ir.sharif.taxifinder.webservice.webservices.driverDetail.DriverDetailResponse
 import ir.sharif.taxifinder.webservice.webservices.driverRegister.DriverRegisterRequest
 import ir.sharif.taxifinder.webservice.webservices.driverRegister.DriverRegisterResponse
 import ir.sharif.taxifinder.webservice.webservices.drivers.DriversResponse
+import ir.sharif.taxifinder.webservice.webservices.login.LoginResponse
 import retrofit2.Call
-import retrofit2.http.*
+import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface WebserviceUrls {
 

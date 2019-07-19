@@ -5,7 +5,6 @@ import java.io.IOException
 import ir.sharif.taxifinder.webservice.base.BaseProcess
 import ir.sharif.taxifinder.webservice.base.MyRetrofit
 import ir.sharif.taxifinder.webservice.base.WebserviceException
-import ir.sharif.taxifinder.webservice.webservices.driverRegister.DriverRegisterRequest
 
 class DriverCodeProcess(val uuid: String) : BaseProcess() {
     private val request: DriverCodeRequest = DriverCodeRequest(uuid)

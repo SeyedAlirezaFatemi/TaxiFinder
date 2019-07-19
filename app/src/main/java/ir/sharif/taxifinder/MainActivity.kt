@@ -45,9 +45,11 @@ class MainActivity : BaseActivity(), Advertiser.AdvertiseListener<Any>, SwipeRef
         // Create items
         val item1 = AHBottomNavigationItem(R.string.scan_barcode, R.drawable.qrcode, R.color.white)
         val item2 = AHBottomNavigationItem(R.string.list, R.drawable.list, R.color.white)
+        val item3 = AHBottomNavigationItem(R.string.add, R.drawable.rounded_add_button, R.color.white)
 
         // Add items
         bottomNavigation.addItem(item1)
+        bottomNavigation.addItem(item3)
         bottomNavigation.addItem(item2)
 
         bottomNavigation.defaultBackgroundColor = Color.parseColor("#2452C1")
@@ -61,8 +63,11 @@ class MainActivity : BaseActivity(), Advertiser.AdvertiseListener<Any>, SwipeRef
 
         // Set listeners
         bottomNavigation.setOnTabSelectedListener { position, wasSelected ->
-            if (position == 0) {
+            if (position == 0) { //barcode reader
                 val launchIntent = BarcodeReaderActivity.getLaunchIntent(this, true, false)
+                startActivityForResult(launchIntent, 100)
+            }else if (position == 1) { //add driver
+                val launchIntent =  Intent(this, AddDriverActivity::class.java)
                 startActivityForResult(launchIntent, 100)
             }
             true

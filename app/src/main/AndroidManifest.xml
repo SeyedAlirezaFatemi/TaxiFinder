@@ -38,7 +38,10 @@
             <meta-data android:name="android.app.shortcuts"
                        android:resource="@xml/shortcuts"/>
         </activity>
-
+        <activity
+                android:name=".AddDriverActivity"
+                android:screenOrientation="portrait">
+        </activity>
         <activity
                 android:name=".DriverInquiryActivity"
                 android:screenOrientation="portrait">

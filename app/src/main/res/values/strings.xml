@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Taxi QR Reader</string>
     <string name="list">ثبت نام شده ها</string>
+    <string name="add">افزودن راننده</string>
     <string name="scan_barcode">اسکن بارکد</string>
     <string name="driver_info">اطلاعات راننده</string>
     <string name="ok">تایید</string>
@@ -21,4 +22,12 @@
     <string name="enter">ورود</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+    <string name="car_brand">مدل ماشین</string>
+    <string name="phone_num">شماره موبایل</string>
+    <string name="last_name">نام خانوادگی</string>
+    <string name="plate_number">شماره پلاک</string>
+    <string name="add_pls">اضافه کن!</string>
+    <string name="avatar"> )اختیاری( آدرس آواتار </string>
+    <string name="first_name">نام</string>
+    <string name="necessary_field">پر کردن این فیلد ضروری است!</string>
 </resources>

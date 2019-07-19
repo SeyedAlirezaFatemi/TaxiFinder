@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LoginActivity">
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_alignParentTop="true"
+                  android:layout_height="match_parent"
+                  android:layout_above="@id/bottomNavigation"
+                  android:orientation="vertical"
+                  android:baselineAligned="false" tools:ignore="NotSibling">
+
+        <FrameLayout android:id="@+id/logoFrame"
+                     android:layout_weight="3"
+                     android:background="@color/yellow"
+                     android:layout_width="match_parent"
+                     android:padding="12dp"
+                     android:layout_height="0dp">
+
+            <ImageView
+                    android:src="@mipmap/taxi_logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </FrameLayout>
+
+        <RelativeLayout
+                android:id="@+id/body"
+                android:background="@color/gray"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:paddingTop="36dp"
+                android:layout_weight="8">
+
+
+            <EditText
+                    android:id="@+id/firstNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="9dp"
+                    android:background="@drawable/phone_edit_bg"
+                    android:elevation="8dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginRight="36dp"
+                    android:maxLength="11"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:hint="@string/first_name"
+                    android:layout_height="50dp"/>
+
+            <EditText
+                    android:id="@+id/lastNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="9dp"
+                    android:layout_below="@id/firstNameEditText"
+                    android:background="@drawable/phone_edit_bg"
+                    android:elevation="8dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginRight="36dp"
+                    android:maxLength="11"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:hint="@string/last_name"
+                    android:layout_height="50dp"/>
+
+            <EditText
+                    android:id="@+id/phoneNumberEditText"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="9dp"
+                    android:layout_below="@id/lastNameEditText"
+                    android:background="@drawable/phone_edit_bg"
+                    android:elevation="8dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginRight="36dp"
+                    android:maxLength="11"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:inputType="phone"
+                    android:hint="@string/phone_num"
+                    android:layout_height="50dp"/>
+
+            <EditText
+                    android:id="@+id/carBrandEditText"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="9dp"
+                    android:layout_below="@id/phoneNumberEditText"
+                    android:background="@drawable/phone_edit_bg"
+                    android:elevation="8dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginRight="36dp"
+                    android:maxLength="11"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:hint="@string/car_brand"
+                    android:layout_height="50dp"/>
+
+            <EditText
+                    android:id="@+id/plateEditText"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="9dp"
+                    android:layout_below="@id/carBrandEditText"
+                    android:background="@drawable/phone_edit_bg"
+                    android:elevation="8dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginRight="36dp"
+                    android:maxLength="11"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:hint="@string/plate_number"
+                    android:layout_height="50dp"/>
+
+            <EditText
+                    android:id="@+id/avatarEditText"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="9dp"
+                    android:layout_below="@id/plateEditText"
+                    android:background="@drawable/phone_edit_bg"
+                    android:elevation="8dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginRight="36dp"
+                    android:maxLength="11"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:hint="@string/avatar"
+                    android:layout_height="50dp"/>
+
+
+            <TextView android:id="@+id/submitButton"
+                      android:layout_marginTop="18dp"
+                      android:layout_width="match_parent"
+                      android:layout_height="64dp"
+                      android:text="@string/add_pls"
+                      android:gravity="center"
+                      android:layout_marginLeft="36dp"
+                      android:layout_marginRight="36dp"
+                      android:textColor="@color/white"
+                      android:textSize="18sp"
+                      android:elevation="8dp"
+                      android:background="@drawable/button_bg"
+                      android:layout_below="@id/avatarEditText"/>
+
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
