@@ -3,6 +3,7 @@ package ir.sharif.taxifinder.webservice
 import ir.sharif.taxifinder.webservice.base.WebserviceException
 import ir.sharif.taxifinder.webservice.webservices.driverCode.DriverCode
 import ir.sharif.taxifinder.webservice.webservices.driverCode.DriverCodeResponse
+import ir.sharif.taxifinder.webservice.webservices.driverDetail.DriverDetailResponse
 import ir.sharif.taxifinder.webservice.webservices.drivers.Driver
 import ir.sharif.taxifinder.webservice.webservices.drivers.DriversResponse
 import ir.sharif.taxifinder.webservice.webservices.login.LoginResponse
@@ -55,4 +56,6 @@ object MockServer {
     )
 
     fun driverCode(uuid: String) = DriverCodeResponse(200, "", DriverCode("123456789"))
+
+    fun getDriverDetail() = DriverDetailResponse()
 }

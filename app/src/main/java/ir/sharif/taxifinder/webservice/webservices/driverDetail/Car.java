@@ -27,6 +27,7 @@ public class Car {
         this.company = company;
     }
 
+
     @SerializedName("color")
     @Expose
     private String color;

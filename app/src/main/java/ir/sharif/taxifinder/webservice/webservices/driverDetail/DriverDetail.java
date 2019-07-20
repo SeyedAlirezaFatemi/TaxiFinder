@@ -26,6 +26,8 @@ public class DriverDetail implements Serializable {
     @Expose
     private Car car;
 
+
+
     public DriverDetail(Integer driverId, String imageUrl, String firstName, String lastName, String msisdn, Car car) {
         this.driverId = driverId;
         this.imageUrl = imageUrl;
