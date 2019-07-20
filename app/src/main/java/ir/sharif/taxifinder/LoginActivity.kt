@@ -185,6 +185,7 @@ class LoginActivity : BaseActivity() {
         editPhoneNumberButton.setOnClickListener {
             getVerificationCode.visibility = View.GONE
             getPhoneNumber.visibility = View.VISIBLE
+            Progressbar.visibility = View.GONE
         }
 
     }
