@@ -12,4 +12,7 @@ public class DriverCode {
     @Expose
     private String driverCode;
 
+    public DriverCode(String driverCode) {
+        this.driverCode = driverCode;
+    }
 }

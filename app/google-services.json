@@ -1,0 +1,41 @@
+
+{
+  "project_info": {
+    "project_number": "835021766516",
+    "firebase_url": "https://taxifinder-c9725.firebaseio.com",
+    "project_id": "taxifinder-c9725",
+    "storage_bucket": "taxifinder-c9725.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835021766516:android:7d89a6942fc951b7",
+        "android_client_info": {
+          "package_name": "ir.sharif.taxifinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835021766516-tbdttlodnn81qkoe3k0p0d4n6b7boc40.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiji1YDEzdNH6QQeMli5jDN2lWKuElGTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835021766516-tbdttlodnn81qkoe3k0p0d4n6b7boc40.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

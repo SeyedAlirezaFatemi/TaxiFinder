@@ -14,6 +14,12 @@ public class DriverCodeResponse {
     @Expose
     private DriverCode driverCode;
 
+    public DriverCodeResponse(Integer code, String message, DriverCode driverCode) {
+        this.code = code;
+        this.message = message;
+        this.driverCode = driverCode;
+    }
+
     public Integer getCode() {
         return code;
     }
