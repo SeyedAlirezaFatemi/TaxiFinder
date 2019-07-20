@@ -34,4 +34,10 @@
     <string name="delete_driver">حذف راننده</string>
     <string name="yes">بله</string>
     <string name="no">خیر</string>
+    <string name="enterVerificationCode">لطفا کد فعال سازی ارسال شده را وارد نمایید.</string>
+    <string name="sendVerificationCode">ارسال کد فعال سازی</string>
+    <string name="resendButton">ارسال مجدد</string>
+    <string name="editPhoneNumber">ویرایش شماره</string>
+    <string name="xxxxxx">XXXXXX</string>
+    <string name="_09xxxxxxxxx">09XXXXXXXXX</string>
 </resources>
